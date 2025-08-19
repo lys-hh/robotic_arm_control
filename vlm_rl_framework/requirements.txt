@@ -1,0 +1,42 @@
+# VLM+RL框架依赖包
+# 核心依赖
+numpy>=1.20.0
+matplotlib>=3.5.0
+mujoco>=3.0.0
+gymnasium[mujoco]>=0.29.0
+
+# 强化学习库
+stable-baselines3[extra]>=2.0.0
+torch>=2.0.0
+torchvision>=0.15.0
+
+# 视觉语言模型
+transformers>=4.30.0
+accelerate>=0.20.0
+bitsandbytes>=0.41.0
+
+# 可选：Ray RLlib (用于分布式训练)
+# ray[rllib]>=2.7.0
+
+# 实验跟踪和可视化
+wandb>=0.15.0
+tensorboard>=2.12.0
+
+# 数据处理
+pandas>=1.3.0
+scipy>=1.7.0
+
+# 日志和配置
+python-dotenv>=0.19.0
+
+# 性能监控
+psutil>=5.8.0
+
+# 图像处理
+opencv-python>=4.5.0
+pillow>=8.0.0
+
+# VLM相关
+einops>=0.6.0
+transformers-stream-generator>=0.0.4
+tiktoken>=0.3.0
