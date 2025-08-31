@@ -104,7 +104,7 @@ class TrajectoryGenerator:
 class PIDController:
     """PID控制器类"""
     
-    def __init__(self, kp: float = 100.0, ki: float = 10.0, kd: float = 20.0, 
+    def __init__(self, kp: float = 10.0, ki: float = 1.0, kd: float = 2.0, 
                  integral_limit: float = 100.0, output_limit: float = 1000.0):
         """
         初始化PID控制器
@@ -600,7 +600,7 @@ class PandaController:
         print(f"Maximum Position Error: {np.max(error_magnitude):.6f} m")
         print(f"Position Error Std Dev: {np.std(error_magnitude):.6f} m")
     
-    def run_mujoco_simulation(self, duration: float = 10.0, dt: float = 0.01):
+    def run_mujoco_simulation(self, duration: float = 100.0, dt: float = 0.01):
         """
         运行MuJoCo仿真
         
@@ -713,7 +713,7 @@ def main():
     
     # 运行轨迹跟踪
     print("运行轨迹跟踪...")
-    controller.run_trajectory(duration=1.0, dt=0.01)
+    controller.run_trajectory(duration=10.0, dt=0.01)
     
     # 可视化结果
     print("生成可视化结果...")
@@ -722,7 +722,7 @@ def main():
     # 询问是否运行MuJoCo仿真
     response = input("\n是否运行MuJoCo仿真? (y/n): ")
     if response.lower() == 'y':
-        controller.run_mujoco_simulation(duration=1.0, dt=0.01)
+        controller.run_mujoco_simulation(duration=10.0, dt=0.01)
 
 if __name__ == "__main__":
     main() 

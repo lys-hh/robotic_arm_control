@@ -76,7 +76,7 @@ matplotlib.rcParams['font.family'] = ['SimHei', 'DejaVu Sans'] if has_chinese_fo
 class AdaptiveJointPIDController:
     """自适应关节PID控制器"""
     
-    def __init__(self, kp: float = 100.0, ki: float = 10.0, kd: float = 5.0,
+    def __init__(self, kp: float = 80.0, ki: float = 20.0, kd: float =10.0,
                  integral_limit: float = 50.0, output_limit: float = 100.0,
                  adaptive_gains: bool = True):
         """
@@ -894,7 +894,7 @@ class ImprovedPandaMujocoController:
         """设置轨迹生成器"""
         self.trajectory_generator = trajectory_generator
     
-    def run_optimized_trajectory(self, duration: float = 3.0, dt: float = 0.01):
+    def run_optimized_trajectory(self, duration: float = 10.0, dt: float = 0.01):
         """运行优化的轨迹跟踪"""
         if self.trajectory_generator is None:
             raise ValueError("请先设置轨迹生成器")
@@ -1360,7 +1360,7 @@ def main():
     
     # 运行改进的轨迹跟踪
     print("[INFO] 运行改进的轨迹跟踪...")
-    controller.run_optimized_trajectory(duration=3.0, dt=0.01)
+    controller.run_optimized_trajectory(duration=10.0, dt=0.01)
     
     # 可视化结果
     print("[INFO] 生成改进的可视化结果...")

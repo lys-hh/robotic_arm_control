@@ -672,7 +672,7 @@ class PandaMujocoController:
         # 计算期望位置，限制增量避免发散
         position_increment = task_output * dt
         # 使用固定的保守步长
-        max_increment = 0.02  # 固定2cm步长，避免振荡
+        max_increment = 0.05  # 固定2cm步长，避免振荡
         increment_magnitude = np.linalg.norm(position_increment)
         if increment_magnitude > max_increment:
             position_increment = position_increment * (max_increment / increment_magnitude)
